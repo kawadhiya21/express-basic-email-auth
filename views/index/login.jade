@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1= title
+  .row
+    .column.column-50
+      for()
+      form(method="POST", action="/user/login")
+        fieldset
+          label(for="email") Email
+          input(type="email", placeholder="bob@example.com", name="email", value="#{email}")
+          label(for="password") Password
+          input(type="password", placeholder="12345", name="password")
+          input(type="submit", value="submit", class="float-right")
